@@ -10,12 +10,12 @@ const char *semana[] = {"Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sa
 void getTime(char* fechaStr, char* horaStr)
 {
     time_t tiempo;
-    struct tm timeTm
+    struct tm timeTm;
     tiempo = time(NULL);
 
     timeTm = localtime(&tiempo);
 
-    sprintf(fechaStr, "%s %d de %s del %d\n", semana[timeTm.tm_wday], tm_mday, meses[l_tm_mon], tm_año);
+    sprintf(fechaStr, "%s %d de %s del %d", semana[timeTm.tm_wday], tm_mday, meses[l_tm_mon], tm_año);
     sprintf(horaStr, "%d:%d:%d", tm_hora, min_tmm, tm_seg);
 }
 
